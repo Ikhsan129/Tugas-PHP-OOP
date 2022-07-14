@@ -62,3 +62,8 @@ function get_by_id($id)
  $query = mysqli_query($this->koneksi, "select * from mhs where id='$id'"); 
  return $query->fetch_assoc(); 
 }
+
+function update_data($id, $nim, $nama, $angkatan, $kode_prodi) 
+{ 
+ $query = mysqli_query($this->koneksi, "update mhs set NIM='$nim', namaMhs='$nama', angkatan='$angkatan', kode_prodi='$kode_prodi' where id='$id'"); 
+} 
