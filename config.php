@@ -24,3 +24,11 @@ class Database
   } 
 return $hasil; 
 }
+
+
+ 
+function get_by_id($id) 
+{ 
+ $query = mysqli_query($this->koneksi, "select * from mhs where id='$id'"); 
+ return $query->fetch_assoc(); 
+}
