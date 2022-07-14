@@ -11,7 +11,7 @@ if ($action == "add") {
   
  $db->tambah_data($nim, $nama, $angkatan, $kode_prodi); 
  header('location:tampil_data.php');
- elseif ($action == "update") { 
+} elseif ($action == "update") { 
   $id = $_POST['id']; 
   $nim = $_POST['NIM']; 
   $nama = $_POST['namaMhs']; 
@@ -20,5 +20,8 @@ if ($action == "add") {
  
   $db->update_data($id, $nim, $nama, $angkatan, $kode_prodi); 
   header('location:tampil_data.php'); 
- }
+} elseif ($action == "delete") { 
+   $id = $_GET['id']; 
+   $db->delete_data($id); 
+   header('location:tampil_data.php');
 }
